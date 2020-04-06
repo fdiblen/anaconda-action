@@ -37,9 +37,23 @@ Python version used in the action.
 
 ## Example usage
 
-uses: actions/anaconda-action@v1
-with:
-  envFileName: 'environment.yml'
+```workflow
+name: 'Anaconda Github Action'
+
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: A simple test job
+    steps:
+    - uses: actions/checkout@v2
+    - name: Anaconda-Action
+      id: step1
+      uses: fdiblen/anaconda-action@0.1.5
+      with:
+        envFileName: 'environment.yml'
+```
 
 ## Local testing
 To test the action locally, you can use [act](https://github.com/nektos/act).
