@@ -1,12 +1,12 @@
-# Conda tools
+# Conda Tools
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
 ## Inputs
 
-### `who-to-greet`
+### `envFileName`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The name of conda environment file name. Default `"environment.yml"`.
 
 ## Outputs
 
@@ -16,6 +16,6 @@ The time we greeted you.
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+uses: actions/conda-tools@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  envFileName: 'environment.yml'
