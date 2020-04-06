@@ -10,12 +10,16 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 
 ### `pythonVersion`
 
+Desired Python version to create a conda environment.
 
 ### `channels`
+
+Extra anaconda channels to use.
 
 
 ### `activateEnv`
 
+Activate the new environment
 
 ## Outputs
 

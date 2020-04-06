@@ -14,11 +14,11 @@ inputs:
     required: false
     default: 'default'
   channels:  # id of input
-    description: 'Extra anaconda channels'
+    description: 'Extra anaconda channels to use.'
     required: false
     default: ''
   activateEnv:  # id of input
-    description: 'Activate the new environment'
+    description: 'Activate the new environment.'
     required: false
     default: 'true'
 outputs:
