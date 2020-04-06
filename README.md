@@ -8,6 +8,15 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 
 **Required** The name of anaconda environment file name. Default `"environment.yml"`.
 
+### `pythonVersion`
+
+
+### `channels`
+
+
+### `activateEnv`
+
+
 ## Outputs
 
 ### `time`
@@ -17,6 +26,10 @@ The time the action was executed you.
 ### `conda_version`
 
 Anaconda version used in the action.
+
+### `python_version`
+
+Python version used in the action.
 
 ## Example usage
 
