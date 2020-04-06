@@ -1,4 +1,4 @@
-name: 'Conda-Tools'
+name: 'Anaconda-Action'
 description: 'Build and publish conda packages'
 author: 'fdiblen'
 branding:
