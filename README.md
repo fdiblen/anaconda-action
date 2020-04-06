@@ -1,4 +1,4 @@
-# Conda Tools
+# Anaconda-Action
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
@@ -6,7 +6,7 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ### `envFileName`
 
-**Required** The name of conda environment file name. Default `"environment.yml"`.
+**Required** The name of anaconda environment file name. Default `"environment.yml"`.
 
 ## Outputs
 
@@ -16,6 +16,6 @@ The time we greeted you.
 
 ## Example usage
 
-uses: actions/conda-tools@v1
+uses: actions/anaconda-action@v1
 with:
   envFileName: 'environment.yml'
