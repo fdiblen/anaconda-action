@@ -16,5 +16,7 @@ jobs:
     # Use the output from the `step1` step
     - name: Get the output time
       run: echo "The time was ${{ steps.step1.outputs.time }}"
-    - name: Get the output conda_version
-      run: echo "The time was ${{ steps.step1.outputs.conda_version }}"
+    - name: Get the Conda version
+      run: echo "The conda version is ${{ steps.step1.outputs.conda_version }}"
+    - name: Get the Python version
+      run: echo "The python version is ${{ steps.step1.outputs.python_version }}"
