@@ -2,6 +2,10 @@
 set -eu
 set -o pipefail
 
+get_conda_version() {
+    conda_version=$(conda --version | cut -d " " -f2)
+}
+
 check_file_exists () {
     if [ ! -f $1 ]; then
         echo "$1 does not exist!"
@@ -26,6 +30,7 @@ show_args() {
 
 time=$(date)
 echo "::set-output name=time::$time"
+echo "::set-output name=conda_version::$conda_version"
 
 check_env_file
 show_args

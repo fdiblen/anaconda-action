@@ -12,6 +12,10 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
+  conda_version:
+    description: 'Conda version'
+  python_version:
+    description: 'Python version'
 runs:
   using: 'docker'
   image: 'Dockerfile'

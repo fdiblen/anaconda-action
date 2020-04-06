@@ -12,6 +12,8 @@ jobs:
       uses: actions/Anaconda-Action@v1
       with:
         envFileName: 'env.yml'
-    # Use the output from the `hello` step
+    # Use the output from the `step1` step
     - name: Get the output time
       run: echo "The time was ${{ steps.step1.outputs.time }}"
+    - name: Get the output conda_version
+      run: echo "The time was ${{ steps.step1.outputs.conda_version }}"
