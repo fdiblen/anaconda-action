@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A simple test job
     steps:
+    - uses: actions/checkout@v2
     - name: Anaconda-Action
       id: step1
       uses: fdiblen/anaconda-action@0.1.3

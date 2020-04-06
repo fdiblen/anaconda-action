@@ -2,6 +2,10 @@
 # set -Eeuxo pipefail
 set -ex
 
+get_time() {
+    time=$(date)
+}
+
 get_versions() {
     conda_version=$(conda --version | cut -d " " -f2)
     python_version=$(python --version | cut -d " " -f2)
@@ -13,6 +17,7 @@ check_file_exists () {
         exit 1
     else
         echo "Found $1."
+        md5sum $1
     fi
 }
 
@@ -31,7 +36,7 @@ show_args() {
     done
 }
 
-time=$(date)
+get_time
 get_versions
 check_env_file
 show_args
