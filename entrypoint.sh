@@ -1,8 +1,10 @@
 #!/bin/bash
-set -Eeuxo pipefail
+# set -Eeuxo pipefail
+set -Eex
 
-get_conda_version() {
+get_versions() {
     conda_version=$(conda --version | cut -d " " -f2)
+    python_version=$(python --version | cut -d " " -f2)
 }
 
 check_file_exists () {
@@ -28,11 +30,13 @@ show_args() {
 }
 
 time=$(date)
-echo "::set-output name=time::$time"
-echo "::set-output name=conda_version::$conda_version"
-
+get_versions
 check_env_file
 show_args
+
+echo "::set-output name=time::$time"
+echo "::set-output name=conda_version::$conda_version"
+echo "::set-output name=python_version::$python_version"
 
 # if <condition> ; then
 #   echo "Failed! Game over!"

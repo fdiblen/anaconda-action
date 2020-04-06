@@ -9,6 +9,18 @@ inputs:
     description: 'Envirenment file name'
     required: true
     default: 'environment.yml'
+  pythonVersion:  # id of input
+    description: 'Desired Python version to create a conda environment.'
+    required: false
+    default: 'default'
+  channels:  # id of input
+    description: 'Extra anaconda channels'
+    required: false
+    default: ''
+  activateEnv:  # id of input
+    description: 'Activate the new environment'
+    required: false
+    default: 'true'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -21,5 +33,3 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.envFileName }}
-    - 'foo'
-    - 'bar'
