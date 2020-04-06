@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Anaconda-Action
       id: step1
-      uses: fdiblen/anaconda-action@0.1.1
+      uses: fdiblen/anaconda-action@0.1.2
       with:
         envFileName: 'env.yml'
     # Use the output from the `step1` step

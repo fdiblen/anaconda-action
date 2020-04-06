@@ -1,6 +1,6 @@
 # Anaconda-Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action tests anaconda environments, builds anaconda packages and pushes anaconda packages to anaconda cloud.
 
 ## Inputs
 
@@ -12,7 +12,11 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 
 ### `time`
 
-The time we greeted you.
+The time the action was executed you.
+
+### `conda_version`
+
+Anaconda version used in the action.
 
 ## Example usage
 
