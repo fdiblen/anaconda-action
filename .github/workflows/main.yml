@@ -11,7 +11,7 @@ jobs:
       id: step1
       uses: fdiblen/anaconda-action@0.1.3
       with:
-        envFileName: 'env.yml'
+        envFileName: 'README.md'
     # Use the output from the `step1` step
     - name: Get the output time
       run: echo "The time was ${{ steps.step1.outputs.time }}"

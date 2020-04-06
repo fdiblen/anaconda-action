@@ -1,6 +1,6 @@
 #!/bin/bash
 # set -Eeuxo pipefail
-set -Eex
+set -ex
 
 get_versions() {
     conda_version=$(conda --version | cut -d " " -f2)
@@ -11,6 +11,8 @@ check_file_exists () {
     if [ ! -f $1 ]; then
         echo "$1 does not exist!"
         exit 1
+    else
+        echo "Found $1."
     fi
 }
 
