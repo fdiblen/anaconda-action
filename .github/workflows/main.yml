@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A simple test job
     steps:
-    - name: Conda action
+    - name: Anaconda-Action
       id: step1
-      uses: actions/Anaconda-Action@v1
+      uses: fdiblen/anaconda-action@0.1.1
       with:
         envFileName: 'env.yml'
     # Use the output from the `step1` step
