@@ -19,3 +19,6 @@ The time we greeted you.
 uses: actions/anaconda-action@v1
 with:
   envFileName: 'environment.yml'
+
+## Local testing
+To test the action locally, you can use [act](https://github.com/nektos/act).
