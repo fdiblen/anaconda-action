@@ -1,6 +1,5 @@
 #!/bin/bash
-set -eu
-set -o pipefail
+set -Eeuxo pipefail
 
 get_conda_version() {
     conda_version=$(conda --version | cut -d " " -f2)
