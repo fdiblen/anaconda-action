@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Conda action
+      id: step1
+      uses: actions/anaconda-action@v1
+      with:
+        envFileName: 'env.yml'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.step1.outputs.time }}"
