@@ -1,5 +1,9 @@
 name: 'Conda Tools'
 description: 'Build and publish conda packages'
+author: 'fdiblen'
+branding:
+  icon: 'package'
+  color: 'green'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
