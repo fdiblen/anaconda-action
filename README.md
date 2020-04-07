@@ -66,7 +66,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Anaconda-Action
       id: step1
-      uses: fdiblen/anaconda-action@0.1.5
+      uses: fdiblen/anaconda-action@0.1.7
       with:
         env-file-name: 'environment.yml'
 ```
