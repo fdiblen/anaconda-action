@@ -44,7 +44,7 @@ module.exports = {
         }
         console.log('Display conda info')
         console.log('\n----------------------');
-        if (shell.exec('conda info').code !== 0) {
+        if (shell.exec('. ~/miniconda/etc/profile.d/conda.sh;' + 'conda info').code !== 0) {
             shell.echo('Error: conda info failed');
             shell.exit(1);
         }
@@ -53,7 +53,7 @@ module.exports = {
     create_environment: function (env_file, env_name) {
         var _file_opts = ' --file=' + env_file
         var _name_opts = ' --name ' + env_name
-        if (shell.exec('conda env create ' + _name_opts + _file_opts).code !== 0) {
+        if (shell.exec('. ~/miniconda/etc/profile.d/conda.sh;' + 'conda env create ' + _name_opts + _file_opts).code !== 0) {
             shell.echo('Error: Environment creation failed');
             shell.exit(1);
         }
@@ -64,24 +64,19 @@ module.exports = {
             shell.echo('Error: Conda init failed');
             shell.exit(1);
         }
-        // // if (shell.exec('conda init bash').code !== 0) {
-        // //     shell.echo('Error: Conda init failed');
-        // //     shell.exit(1);
-        // // }
+
+        // if (shell.exec('conda init bash').code !== 0) {
+        //     shell.echo('Error: Conda init failed');
+        //     shell.exit(1);
+        // }
         // if (shell.exec('conda activate ' + env_name).code !== 0) {
         //     shell.echo('Error: Cannot activate the environment');
         //     shell.exit(1);
         // }
-
-        // var cmd = 'source ~/miniconda/etc/profile.d/conda.sh; source ~/.bash_profile; ' +
-        // 'conda activate  "' + env_name + '"; '
-        // shell.echo(cmd);
-        // shell.exec(cmd, { async: false, maxBuffer: 200 * 1024 * 1024 });
-
     },
 
     list_environments: function () {
-        if (shell.exec('conda env list').code !== 0) {
+        if (shell.exec('. ~/miniconda/etc/profile.d/conda.sh;' + 'conda env list').code !== 0) {
             shell.echo('Error: Cannot get environment list');
             shell.exit(1);
         }
