@@ -7,11 +7,11 @@ branding:
 inputs:
   envName:  # id of input
     description: 'Environment name.'
-    required: true
+    required: false
     default: 'environment.yml'
   envFileName:  # id of input
     description: 'Environment file name.'
-    required: true
+    required: false
     default: 'environment.yml'
   pythonVersion:  # id of input
     description: 'Desired Python version to create a conda environment.'
