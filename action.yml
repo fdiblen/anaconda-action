@@ -5,11 +5,15 @@ branding:
   icon: 'package'
   color: 'green'
 inputs:
-  envFileName:  # id of input
-    description: 'Envirenment file name'
+  env-name:  # id of input
+    description: 'Envirenment name.'
     required: true
     default: 'environment.yml'
-  pythonVersion:  # id of input
+  env-file-name:  # id of input
+    description: 'Envirenment file name.'
+    required: true
+    default: 'environment.yml'
+  python-version:  # id of input
     description: 'Desired Python version to create a conda environment.'
     required: false
     default: 'default'
@@ -17,19 +21,31 @@ inputs:
     description: 'Extra anaconda channels to use.'
     required: false
     default: ''
-  activateEnv:  # id of input
+  activate-env:  # id of input
     description: 'Activate the new environment.'
     required: false
     default: 'true'
+  publish:  # id of input
+    description: 'Enable package publishing.'
+    required: false
+    default: 'false'
+  publish-channel:  # id of input
+    description: 'Channel to publish the anaconda package.'
+    required: false
+    default: ''
+  anaconda-token:  # id of input
+    description: 'Token to access to anaconda cloud.'
+    required: false
+    default: ''
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'The time the action was executed you.'
   conda_version:
-    description: 'Conda version'
+    description: 'Conda version used in the action.'
   python_version:
-    description: 'Python version'
+    description: 'Python version used in the action.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.envFileName }}
+    - ${{ inputs.env-file-name }}

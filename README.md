@@ -4,11 +4,15 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 
 ## Inputs
 
-### `envFileName`
+### `env-name`
 
-**Required** The name of anaconda environment file name. Default `"environment.yml"`.
+**Required** The name of anaconda environment. Default `"environment.yml"`.
 
-### `pythonVersion`
+### `env-file-name`
+
+**Required** The name of anaconda environment file. Default `"environment.yml"`.
+
+### `python-version`
 
 **Optional** Desired Python version to create a conda environment.
 
@@ -17,9 +21,21 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 **Optional** Extra anaconda channels to use.
 
 
-### `activateEnv`
+### `activate-env`
 
 **Optional** Activate the new environment
+
+### `publish`
+
+**Optional** Enable package publishing.
+
+### `publish-channel`
+
+**Optional** Channel to publish the anaconda package.
+
+### `anaconda-token`
+
+**Optional** Token to access to anaconda cloud.
 
 ## Outputs
 
@@ -29,7 +45,7 @@ The time the action was executed you.
 
 ### `conda_version`
 
-Anaconda version used in the action.
+Conda version used in the action.
 
 ### `python_version`
 
@@ -52,7 +68,7 @@ jobs:
       id: step1
       uses: fdiblen/anaconda-action@0.1.5
       with:
-        envFileName: 'environment.yml'
+        env-file-name: 'environment.yml'
 ```
 
 ## Local testing
