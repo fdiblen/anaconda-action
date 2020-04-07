@@ -12,7 +12,7 @@ try {
     core.setOutput("actionTime", time);
 
     // conda functions
-    conda.test();
+    conda.check_dependencies();
 
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)
