@@ -51,8 +51,8 @@ module.exports = {
     },
 
     create_environment: function (env_file, env_name) {
-        var _file_opts = '--file=' + env_file
-        var _name_opts = '--name ' + env_name
+        var _file_opts = ' --file=' + env_file
+        var _name_opts = ' --name ' + env_name
         if (shell.exec('conda env create ' + _name_opts + _file_opts).code !== 0) {
             shell.echo('Error: Environment creation failed');
             shell.exit(1);
