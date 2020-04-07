@@ -9,7 +9,7 @@ try {
 
     // outputs
     const time = (new Date()).toTimeString();
-    core.setOutput("time", actionTime);
+    core.setOutput("actionTime", time);
 
     // conda functions
     conda.test();
