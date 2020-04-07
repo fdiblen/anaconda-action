@@ -24,24 +24,35 @@ module.exports = {
         });
     },
 
-    get_miniconda: function () {
+    setup_miniconda: function () {
         const _mc_repo = 'https://repo.continuum.io/miniconda/'
         const _mc_script = 'Miniconda3-latest-Linux-x86_64.sh'
         const _get_opts = ' -O ./miniconda.sh'
 
         // Run external tool synchronously
+        console.log('Download miniconda')
+        console.log('\n----------------------');
         if (shell.exec('wget ' + _mc_repo + _mc_script + _get_opts).code !== 0) {
             shell.echo('Error: download failed');
             shell.exit(1);
         }
-
+        console.log('Run installer')
+        console.log('\n----------------------');
         if (shell.exec('bash ./miniconda.sh -b -p ~/miniconda && rm -f ./miniconda.sh').code !== 0) {
             shell.echo('Error: conda installation failed');
             shell.exit(1);
         }
-
+        console.log('Display conda info')
+        console.log('\n----------------------');
         if (shell.exec('conda info').code !== 0) {
-            shell.echo('Error: conda command failed');
+            shell.echo('Error: conda info failed');
+            shell.exit(1);
+        }
+    },
+
+    build_package: function (env_file, channels) {
+        if (shell.exec('conda build').code !== 0) {
+            shell.echo('Error: conda info failed');
             shell.exit(1);
         }
     }

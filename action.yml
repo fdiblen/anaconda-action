@@ -6,11 +6,11 @@ branding:
   color: 'green'
 inputs:
   envName:  # id of input
-    description: 'Envirenment name.'
+    description: 'Environment name.'
     required: true
     default: 'environment.yml'
   envFileName:  # id of input
-    description: 'Envirenment file name.'
+    description: 'Environment file name.'
     required: true
     default: 'environment.yml'
   pythonVersion:  # id of input

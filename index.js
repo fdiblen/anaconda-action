@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const conda = require('./conda');
+const utils = require('./utils');
 
 try {
     // inputs
@@ -11,9 +12,12 @@ try {
     const time = (new Date()).toTimeString();
     core.setOutput("actionTime", time);
 
+    // check inputs and files
+    utils.file_exists(envFileName)
+
     // conda functions
     conda.check_dependencies();
-    conda.get_miniconda();
+    conda.setup_miniconda();
 
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)
