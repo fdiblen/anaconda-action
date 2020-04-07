@@ -60,7 +60,7 @@ module.exports = {
     },
 
     activate_environment: function (env_name) {
-        if (shell.exec('conda activate' + env_name).code !== 0) {
+        if (shell.exec('conda activate ' + env_name).code !== 0) {
             shell.echo('Error: Cannot activate the environment');
             shell.exit(1);
         }
