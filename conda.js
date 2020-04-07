@@ -59,6 +59,13 @@ module.exports = {
         }
     },
 
+    activate_environment: function (env_name) {
+        if (shell.exec('conda activate' + env_name).code !== 0) {
+            shell.echo('Error: Cannot activate the environment');
+            shell.exit(1);
+        }
+    },
+
     list_environments: function () {
         if (shell.exec('conda env list').code !== 0) {
             shell.echo('Error: Cannot get environment list');

@@ -27,6 +27,7 @@ try {
         conda.create_environment(envFileName, envName);
     }
     conda.list_environments();
+    if (activateEnv) conda.activate_environment(envName);
 
 
     // outputs

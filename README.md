@@ -23,7 +23,7 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 
 ### `activateEnv`
 
-**Optional** Activate the new environment
+**Optional** Activate the new environment. Default `"true"`.
 
 ### `publish`
 
