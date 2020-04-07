@@ -1,0 +1,11 @@
+name: test-env
+
+dependencies:
+  - python=3.7
+  - bokeh
+  - matplotlib
+  - numpy
+  - pandas
+  - pip:
+    - git+https://github.com/blaze/dask.git#egg=dask[complete]
+    - matchms
