@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Anaconda-Action
       id: step1
-      uses: fdiblen/anaconda-action@0.1.14
+      uses: fdiblen/anaconda-action@0.1.15
       with:
         envFileName: 'README.md'
     # Use the output from the `step1` step
