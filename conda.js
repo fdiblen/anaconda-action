@@ -8,7 +8,7 @@ module.exports = {
         } else {
             shell.echo('Found curl');
             var curl_version = shell.exec('curl --version', {silent:true}).stdout;
-            print(curl_version)
+            console.log(curl_version)
         }
 
         // Run external tool synchronously
