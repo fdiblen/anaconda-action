@@ -60,8 +60,16 @@ on: [push]
 
 jobs:
   test_job:
-    runs-on: ubuntu-latest
-    name: A simple test job
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        pythonVersion: [3.6, 3.7, 3.8]
+        exclude:
+          - os: macos-latest
+            pythonVersion: 3.8
+          - os: windows-latest
+            pythonVersion: 3.6
     steps:
     - uses: actions/checkout@v2
     - name: Anaconda-Action
