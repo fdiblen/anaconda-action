@@ -35,7 +35,7 @@ module.exports = {
             shell.exit(1);
         }
 
-        if (shell.exec('bash ~/miniconda.sh -b -p ~/miniconda && rm -f ~/miniconda.sh').code !== 0) {
+        if (shell.exec('bash ./miniconda.sh -b -p ~/miniconda && rm -f ./miniconda.sh').code !== 0) {
             shell.echo('Error: conda installation failed');
             shell.exit(1);
         }
