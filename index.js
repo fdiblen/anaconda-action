@@ -5,19 +5,26 @@ const utils = require('./utils');
 
 try {
     // inputs
+    const envName = core.getInput('envName');
     const envFileName = core.getInput('envFileName');
+    const pythonVersion = core.getInput('pythonVersion');
+    const channels = core.getInput('channels');
+    const activateEnv = core.getInput('activateEnv');
+    const publish = core.getInput('publish');
+    const publishChannel = core.getInput('publishChannel');
+    const anacondaToken = core.getInput('anacondaToken');
     console.log(`Environment file: ${envFileName}!`);
 
-    // outputs
-    const time = (new Date()).toTimeString();
-    core.setOutput("actionTime", time);
-
     // check inputs and files
-    utils.file_exists(envFileName)
+    if ( !utils.isEmpty(envFileName) ) utils.file_exists(envFileName);
 
     // conda functions
     conda.check_dependencies();
     conda.setup_miniconda();
+
+    // outputs
+    const time = (new Date()).toTimeString();
+    core.setOutput("actionTime", time);
 
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)
