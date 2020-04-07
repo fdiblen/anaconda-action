@@ -16,6 +16,7 @@ jobs:
       uses: fdiblen/anaconda-action@master
       with:
         envFileName: 'environment.yml'
+        channels: conda-forge,bioconda
     # Use the output from the `step1` step
     - name: Get the action execution time
       run: echo "The time was ${{ steps.step1.outputs.actionTime }}"

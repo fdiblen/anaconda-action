@@ -6,11 +6,11 @@ This action tests anaconda environments, builds anaconda packages and pushes ana
 
 ### `envName`
 
-**Required** The name of anaconda environment. Default `"environment.yml"`.
+**Optional** The name of anaconda environment. Default `"conda-env"`.
 
 ### `envFileName`
 
-**Required** The name of anaconda environment file. Default `"environment.yml"`.
+**Optional** The name of anaconda environment file. Default `"environment.yml"`.
 
 ### `pythonVersion`
 

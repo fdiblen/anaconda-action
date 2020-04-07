@@ -50,9 +50,18 @@ module.exports = {
         }
     },
 
-    build_package: function (env_file, channels) {
-        if (shell.exec('conda build').code !== 0) {
-            shell.echo('Error: conda info failed');
+    create_environment: function (env_file, env_name) {
+        var _file_opts = '--file=' + env_file
+        var _name_opts = '--name ' + env_name
+        if (shell.exec('conda env create ' + _name_opts + _file_opts).code !== 0) {
+            shell.echo('Error: Environment creation failed');
+            shell.exit(1);
+        }
+    },
+
+    list_environments: function () {
+        if (shell.exec('conda env list').code !== 0) {
+            shell.echo('Error: Cannot get environment list');
             shell.exit(1);
         }
     }

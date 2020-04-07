@@ -8,7 +8,7 @@ inputs:
   envName:  # id of input
     description: 'Environment name.'
     required: false
-    default: 'environment.yml'
+    default: 'conda-env'
   envFileName:  # id of input
     description: 'Environment file name.'
     required: false

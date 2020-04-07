@@ -13,14 +13,21 @@ try {
     const publish = core.getInput('publish');
     const publishChannel = core.getInput('publishChannel');
     const anacondaToken = core.getInput('anacondaToken');
-    console.log(`Environment file: ${envFileName}!`);
+
 
     // check inputs and files
-    if ( !utils.isEmpty(envFileName) ) utils.file_exists(envFileName);
+
 
     // conda functions
     conda.check_dependencies();
     conda.setup_miniconda();
+    if ( !utils.isEmpty(envFileName) ) {
+        utils.file_exists(envFileName);
+        console.log(`Environment file: ${envFileName}!`);
+        conda.create_environment(envFileName, envName);
+    }
+    conda.list_environments();
+
 
     // outputs
     const time = (new Date()).toTimeString();
