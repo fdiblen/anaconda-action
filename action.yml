@@ -45,7 +45,5 @@ outputs:
   python_version:
     description: 'Python version used in the action.'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.env-file-name }}
+  using: 'node12'
+  main: 'index.js'
