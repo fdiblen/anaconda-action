@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import * as conda from "./conda";
+const conda = require('./conda');
 
 try {
     // inputs
