@@ -60,18 +60,24 @@ module.exports = {
     },
 
     activate_environment: function (env_name) {
-        if (shell.exec('. ~/miniconda/etc/profile.d/conda.sh').code !== 0) {
-            shell.echo('Error: Cannot init failed');
-            shell.exit(1);
-        }
-        // if (shell.exec('conda init bash').code !== 0) {
+        // if (shell.exec('. ~/miniconda/etc/profile.d/conda.sh').code !== 0) {
         //     shell.echo('Error: Cannot init failed');
         //     shell.exit(1);
         // }
-        if (shell.exec('conda activate ' + env_name).code !== 0) {
-            shell.echo('Error: Cannot activate the environment');
-            shell.exit(1);
-        }
+        // // if (shell.exec('conda init bash').code !== 0) {
+        // //     shell.echo('Error: Cannot init failed');
+        // //     shell.exit(1);
+        // // }
+        // if (shell.exec('conda activate ' + env_name).code !== 0) {
+        //     shell.echo('Error: Cannot activate the environment');
+        //     shell.exit(1);
+        // }
+
+        var cmd = 'source ~/miniconda/etc/profile.d/conda.sh; source ~/.bash_profile; ' +
+        'conda activate  "' + env_name + '"; '
+        shell.echo(cmd);
+        shell.exec(cmd, { async: false, maxBuffer: 200 * 1024 * 1024 });
+
     },
 
     list_environments: function () {
