@@ -26,8 +26,9 @@ try {
         console.log(`Environment file: ${envFileName}!`);
         conda.create_environment(envFileName, envName);
     }
-    if (activateEnv) conda.activate_environment(envName);
     conda.list_environments();
+    if (activateEnv) conda.activate_environment(envName);
+
 
     // outputs
     const time = (new Date()).toTimeString();
