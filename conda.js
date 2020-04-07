@@ -60,10 +60,14 @@ module.exports = {
     },
 
     activate_environment: function (env_name) {
-        if (shell.exec('conda init bash').code !== 0) {
+        if (shell.exec('source ~/miniconda/etc/profile.d/conda.sh').code !== 0) {
             shell.echo('Error: Cannot init failed');
             shell.exit(1);
         }
+        // if (shell.exec('conda init bash').code !== 0) {
+        //     shell.echo('Error: Cannot init failed');
+        //     shell.exit(1);
+        // }
         if (shell.exec('conda activate ' + env_name).code !== 0) {
             shell.echo('Error: Cannot activate the environment');
             shell.exit(1);
