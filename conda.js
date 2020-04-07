@@ -39,5 +39,10 @@ module.exports = {
             shell.echo('Error: conda installation failed');
             shell.exit(1);
         }
+
+        if (shell.exec('conda info').code !== 0) {
+            shell.echo('Error: conda command failed');
+            shell.exit(1);
+        }
     }
 };
