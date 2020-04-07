@@ -4,12 +4,12 @@ const conda = require('./conda');
 
 try {
     // inputs
-    const nameToGreet = core.getInput('env-file-name');
-    console.log(`Environment file: ${env-file-name}!`);
+    const envFileName = core.getInput('envFileName');
+    console.log(`Environment file: ${envFileName}!`);
 
     // outputs
     const time = (new Date()).toTimeString();
-    core.setOutput("time", time);
+    core.setOutput("time", actionTime);
 
     // conda functions
     conda.test();

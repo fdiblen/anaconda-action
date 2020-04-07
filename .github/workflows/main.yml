@@ -8,22 +8,22 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: [3.6, 3.7, 3.8]
+        pythonVersion: [3.6, 3.7, 3.8]
         exclude:
           - os: macos-latest
-            python-version: 3.8
+            pythonVersion: 3.8
           - os: windows-latest
-            python-version: 3.6
+            pythonVersion: 3.6
     steps:
     - uses: actions/checkout@v2
     - name: Anaconda-Action
       id: step1
       uses: fdiblen/anaconda-action@0.1.11
       with:
-        env-file-name: 'README.md'
+        envFileName: 'README.md'
     # Use the output from the `step1` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.step1.outputs.time }}"
+    - name: Get the action execution time
+      run: echo "The time was ${{ steps.step1.outputs.actionTime }}"
     - name: Get the Conda version
       run: echo "The conda version is ${{ steps.step1.outputs.conda_version }}"
     - name: Get the Python version

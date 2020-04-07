@@ -5,15 +5,15 @@ branding:
   icon: 'package'
   color: 'green'
 inputs:
-  env-name:  # id of input
+  envName:  # id of input
     description: 'Envirenment name.'
     required: true
     default: 'environment.yml'
-  env-file-name:  # id of input
+  envFileName:  # id of input
     description: 'Envirenment file name.'
     required: true
     default: 'environment.yml'
-  python-version:  # id of input
+  pythonVersion:  # id of input
     description: 'Desired Python version to create a conda environment.'
     required: false
     default: 'default'
@@ -21,7 +21,7 @@ inputs:
     description: 'Extra anaconda channels to use.'
     required: false
     default: ''
-  activate-env:  # id of input
+  activateEnv:  # id of input
     description: 'Activate the new environment.'
     required: false
     default: 'true'
@@ -29,16 +29,16 @@ inputs:
     description: 'Enable package publishing.'
     required: false
     default: 'false'
-  publish-channel:  # id of input
+  publishChannel:  # id of input
     description: 'Channel to publish the anaconda package.'
     required: false
     default: ''
-  anaconda-token:  # id of input
+  anacondaToken:  # id of input
     description: 'Token to access to anaconda cloud.'
     required: false
     default: ''
 outputs:
-  time: # id of output
+  actionTime: # id of output
     description: 'The time the action was executed you.'
   conda_version:
     description: 'Conda version used in the action.'
